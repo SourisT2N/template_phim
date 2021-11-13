@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/app.css">
+    <title>Web Phim</title>
+</head>
+<body>
+    <div class="page bg-gray-100">
+        <header>
+            <div class="header-top bg-gray-800 pt-2 lg:pt-4">
+                <div class="container">
+                    <div class="row items-center">
+                        <div class="menu-mobile col block lg:hidden">
+                            <i class="fas fa-bars text-white text-4xl" id="navMb"></i>
+                        </div>
+                        <div class="left-logo col">
+                            <a class="inline-block" href="/">
+                                <img src="https://motchill.net/motchill.png?v1.0.2" alt="Logo.png" class="lg:h-16 h-12">
+                            </a>
+                        </div>
+                        <div class="right-logo col text-right">
+                            <button class="lg:hidden inline-block" type="button">
+                                <i id="search-mobile" class="fas fa-search text-white text-4xl"></i>
+                            </button>
+                            <div class="search-group lg:relative lg:block absolute inset-x-0 z-50 hidden">
+                                <form action="/">
+                                    <input class="bg-gray-200 lg:bg-white text-white lg:text-gray-100 border-solid border-black border outline-none w-full p-1.5" name="s" type="text" placeholder="V.d: tên phim, tên diễn viên...">
+                                    <button class="lg:block hidden" type="button">
+                                        <i class="fas fa-search absolute text-xl text-gray-200 top-1.5 right-1"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <p class="italic text-left text-xs clear-both text-gray-50 p-0 mb-0 mt-1 lg:block hidden">
+                                Công cụ tìm kiếm phim.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="menu-header" class="header-bottom bg-gray-600 fixed lg:relative inset-y-0 lg:inset-y-auto z-50 w-240 lg:w-auto menu-bar">
+                <div class="container px-0">
+                    <ul class="menu-list flex lg:block flex-col">
+                        <li class="menu-item active">
+                            <a href="#">Trang chủ</a>
+                        </li>
+                        <li class="menu-item">
+                            <div class="group-menu relative">
+                                <a href="#">Thể Loại</a>
+                                <i class="fas fa-plus text-white lg:hidden absolute top-1/2 transform -translate-y-1/2 right-2"></i>
+                            </div>
+                            <ul class="sub-menu row z-50">
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Cổ Trang - Thần Thoại
+                                    </a>
+                                </li>
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Võ Thuật - Kiếm Hiệp
+                                    </a>
+                                </li>
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Phiêu Lưu - Hành Động
+                                    </a>
+                                </li>
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Tâm Lý - Tình Cảm
+                                    </a>
+                                </li>
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Hoạt Hình
+                                    </a>
+                                </li>
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Khoa Học - Viễn Tưởng
+                                    </a>
+                                </li>
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Tâm Lý - Tình Cảm
+                                    </a>
+                                </li>
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Hoạt Hình
+                                    </a>
+                                </li>
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Khoa Học - Viễn Tưởng
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="group-menu relative">
+                                <a href="#">Quốc Gia</a>
+                                <i class="fas fa-plus text-white lg:hidden absolute top-1/2 transform -translate-y-1/2 right-2"></i>
+                            </div>
+                            <ul class="sub-menu lg:max-w-2xl row z-50">
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Cổ Trang
+                                    </a>
+                                </li>
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Cổ Trang
+                                    </a>
+                                </li>
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Cổ Trang
+                                    </a>
+                                </li>
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Cổ Trang
+                                    </a>
+                                </li>
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Cổ Trang
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="group-menu relative">
+                                <a href="#">Năm Phát Hành</a>
+                                <i class="fas fa-plus text-white lg:hidden absolute top-1/2 transform -translate-y-1/2 right-2"></i>
+                            </div>
+                            <ul class="sub-menu menu-2 max-w-2xl row z-50">
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Cổ Trang
+                                    </a>
+                                </li>
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Cổ Trang
+                                    </a>
+                                </li>
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Cổ Trang
+                                    </a>
+                                </li>
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Cổ Trang
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="group-menu relative">
+                                <a href="#">Loại Phim</a>
+                                <i class="fas fa-plus text-white lg:hidden absolute top-1/2 transform -translate-y-1/2 right-2"></i>
+                            </div>
+                            <ul class="sub-menu menu-2 max-w-2xl row z-50">
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Cổ Trang
+                                    </a>
+                                </li>
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Cổ Trang
+                                    </a>
+                                </li>
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Cổ Trang
+                                    </a>
+                                </li>
+                                <li class="sub-menu_list col">
+                                    <a href="#">
+                                        Cổ Trang
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Tất Cả Phim</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <main class="container px-0">
+            <div class="w-full row px-2 mx-0 my-2">
+                <div class="bg-gray-900 py-2">
+                    <a class="uppercase no-underline text-white text-xs py-2 inline-block" href="#">MỌT PHIM / </a>
+                    <span class="uppercase inline-block text-xs text-gray-10">PHIM CỔ TRANG - THẦN THOẠI</span>
+                </div>
+            </div>
+            <div class="main-mid mx-2 row">
+                <div class="w-full lg:w-4/6">
+                    <div class="filter mb-3">
+                        <form action="" class="row">
+                            <div class="filter-item lg:w-9/12 w-full">
+                                <select class="bg-gray-50 w-1/4 lg:w-1/5 text-xs text-white py-1 outline-none" name="" id="">
+                                    <option value="">-- Sắp Xếp --</option>
+                                </select>
+                                <select class="bg-gray-50 w-1/4 lg:w-1/5 text-xs text-white py-1 outline-none" name="" id="">
+                                    <option value="">-- Sắp Xếp --</option>
+                                </select>
+                                <select class="bg-gray-50 w-1/4 lg:w-1/5 text-xs text-white py-1 outline-none" name="" id="">
+                                    <option value="">-- Sắp Xếp --</option>
+                                </select>
+                                <select class="bg-gray-50 w-1/4 lg:w-1/5 text-xs text-white py-1 outline-none" name="" id="">
+                                    <option value="">-- Sắp Xếp --</option>
+                                </select>
+                                <input class="align-text-top outline-none text-white bg-gray-40 px-1" type="submit" value="Lọc phim">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="list-movie">
+                        <ul class="items row flex">
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/s.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/s.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/s.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/s.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/s.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/s.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/s.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/proxy.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/s.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/s.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/proxy.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/proxy.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/s.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/proxy.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/s.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/s.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/s.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/proxy.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/s.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="item w-1/2 sm:w-1/3 lg:w-1/4 relative inline-block px-1 mb-2">
+                                <span class="absolute p-1 text-xs text-white bg-red-100 border-b-2 border-solid border-red-400 top-1 z-10 rounded-r-md">Tập 22 Vietsub</span>
+                                <a href="#">
+                                    <img src="./images/s.jfif" alt="img" style="height: 227px;" class="w-full">
+                                </a>
+                                <div class="bg-gray-900 text-center overflow-ellipsis overflow-hidden p-1">
+                                    <a href="#" class="no-underline text-white text-xs font-normal whitespace-nowrap">
+                                        Vừa Lúc Em Tỏa Sáng
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pagination text-right mt-3">
+                        <ul class="p-0 inline-block">
+                            <li class="inline-block"><a class="active" href="#">1</a></li>
+                            <li class="inline-block"><a href="#">2</a></li>
+                            <li class="inline-block"><a href="#">3</a></li>
+                            <li class="inline-block"><span class="text-white">...</span></li>
+                            <li class="inline-block"><a href="#">8</a></li>
+                            <li class="inline-block"><a href="#">9</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w-2/6 pt-4 px-4 lg:block hidden">
+                    <div class="group-right">
+                        <span class="pb-1 mb-2 uppercase text-2xl font-light border-b-2 border-dashed border-gray-200 block text-red-300">Phim sắp chiếu</span>
+                        <ul class="list">
+                            <li class="item-right">
+                                <a class="flex no-underline" href="#">
+                                    <img class="w-1/4 h-20 border-solid border-1 border-white inline-block" src="./images/proxy.jfif" alt="img">
+                                    <div class="content w-9/12 pl-2">
+                                        <p class='title text-white text-sm font-bold capitalize mb-1'>Nhất Kiến Khuynh Tâm</p>
+                                        <p class="text-xs text-gray-300">2021</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="item-right">
+                                <a class="flex no-underline" href="#">
+                                    <img class="w-1/4 h-20 border-solid border-1 border-white inline-block" src="./images/proxy.jfif" alt="img">
+                                    <div class="content w-9/12 pl-2">
+                                        <p class='title text-white text-sm font-bold capitalize mb-1'>Nhất Kiến Khuynh Tâm</p>
+                                        <p class="text-xs text-gray-300">2021</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="item-right">
+                                <a class="flex no-underline" href="#">
+                                    <img class="w-1/4 h-20 border-solid border-1 border-white inline-block" src="./images/proxy.jfif" alt="img">
+                                    <div class="content w-9/12 pl-2">
+                                        <p class='title text-white text-sm font-bold capitalize mb-1'>Nhất Kiến Khuynh Tâm</p>
+                                        <p class="text-xs text-gray-300">2021</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="item-right">
+                                <a class="flex no-underline" href="#">
+                                    <img class="w-1/4 h-20 border-solid border-1 border-white inline-block" src="./images/proxy.jfif" alt="img">
+                                    <div class="content w-9/12 pl-2">
+                                        <p class='title text-white text-sm font-bold capitalize mb-1'>Nhất Kiến Khuynh Tâm</p>
+                                        <p class="text-xs text-gray-300">2021</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="item-right">
+                                <a class="flex no-underline" href="#">
+                                    <img class="w-1/4 h-20 border-solid border-1 border-white inline-block" src="./images/proxy.jfif" alt="img">
+                                    <div class="content w-9/12 pl-2">
+                                        <p class='title text-white text-sm font-bold capitalize mb-1'>Nhất Kiến Khuynh Tâm</p>
+                                        <p class="text-xs text-gray-300">2021</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="item-right">
+                                <a class="flex no-underline" href="#">
+                                    <img class="w-1/4 h-20 border-solid border-1 border-white inline-block" src="./images/proxy.jfif" alt="img">
+                                    <div class="content w-9/12 pl-2">
+                                        <p class='title text-white text-sm font-bold capitalize mb-1'>Nhất Kiến Khuynh Tâm</p>
+                                        <p class="text-xs text-gray-300">2021</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="item-right">
+                                <a class="flex no-underline" href="#">
+                                    <img class="w-1/4 h-20 border-solid border-1 border-white inline-block" src="./images/proxy.jfif" alt="img">
+                                    <div class="content w-9/12 pl-2">
+                                        <p class='title text-white text-sm font-bold capitalize mb-1'>Nhất Kiến Khuynh Tâm</p>
+                                        <p class="text-xs text-gray-300">2021</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="item-right">
+                                <a class="flex no-underline" href="#">
+                                    <img class="w-1/4 h-20 border-solid border-1 border-white inline-block" src="./images/proxy.jfif" alt="img">
+                                    <div class="content w-9/12 pl-2">
+                                        <p class='title text-white text-sm font-bold capitalize mb-1'>Nhất Kiến Khuynh Tâm</p>
+                                        <p class="text-xs text-gray-300">2021</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="item-right">
+                                <a class="flex no-underline" href="#">
+                                    <img class="w-1/4 h-20 border-solid border-1 border-white inline-block" src="./images/proxy.jfif" alt="img">
+                                    <div class="content w-9/12 pl-2">
+                                        <p class='title text-white text-sm font-bold capitalize mb-1'>Nhất Kiến Khuynh Tâm</p>
+                                        <p class="text-xs text-gray-300">2021</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="item-right">
+                                <a class="flex no-underline" href="#">
+                                    <img class="w-1/4 h-20 border-solid border-1 border-white inline-block" src="./images/proxy.jfif" alt="img">
+                                    <div class="content w-9/12 pl-2">
+                                        <p class='title text-white text-sm font-bold capitalize mb-1'>Nhất Kiến Khuynh Tâm</p>
+                                        <p class="text-xs text-gray-300">2021</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-gray-600 text-gray-500 mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="lg:w-9/12 pt-2 text-xs w-full">
+                        <p class="m-0">
+                            <a class="text-gray-400 no-underline font-bold hover:text-gray-400" href="#">Xem phim online</a>
+                            miễn phí chất lượng cao với phụ đề tiếng việt - thuyết minh - lồng tiếng. Mọt phim có nhiều thể loại phim phong phú, đặc sắc, nhiều bộ phim hay nhất - mới nhất.
+                        </p>
+                        <p class="m-0">
+                            Website motphim.net với giao diện trực quan, thuận tiện, tốc độ tải nhanh, ít quảng cáo hứa hẹn sẽ đem lại những trải nghiệm tốt cho người dùng.
+                        </p>
+                    </div>
+                    <div class="bg-gray-400 p-3 row lg:w-3/12 w-full">
+                        <div class="col w-1/2 lg:px-0">
+                            <span class="font-bold text-xs">Quy định</span>
+                            <ul>
+                                <li>
+                                    <a class="no-underline text-gray-150 font-normal text-xs" href="#">Điều khoản chung</a>
+                                </li>
+                                <li>
+                                    <a class="no-underline text-gray-150 font-normal text-xs" href="#">Chính sách riêng tư</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col w-1/2 lg:px-0">
+                            <span class="font-bold text-xs">Giới thiệu</span>
+                            <ul>
+                                <li>
+                                    <a class="no-underline text-gray-150 font-normal text-xs" href="#">Trang chủ</a>
+                                </li>
+                                <li>
+                                    <a class="no-underline text-gray-150 font-normal text-xs" href="#">Facebook</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div id="overlay" class="fixed inset-0 z-40 bg-gray-300"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="./js/app.js"></script>
+    <script>
+   $(document).ready(function() {
+        const owl = $('.owl-carousel');
+        owl.on('initialize.owl.carousel initialized.owl.carousel ' +
+                'initialize.owl.carousel initialize.owl.carousel ' +
+                'resize.owl.carousel resized.owl.carousel ' +
+                'refresh.owl.carousel refreshed.owl.carousel ' +
+                'update.owl.carousel updated.owl.carousel ' +
+                'drag.owl.carousel dragged.owl.carousel ' +
+                'translate.owl.carousel translated.owl.carousel ' +
+                'to.owl.carousel changed.owl.carousel ' + 'next.owl.carousel prev.owl.carousel',
+                function(e) {
+                  $('.' + e.type)
+                    .removeClass('secondary')
+                    .addClass('success');
+                  window.setTimeout(function() {
+                    $('.' + e.type)
+                      .removeClass('success')
+                      .addClass('secondary');
+                  }, 500);
+                });
+        owl.owlCarousel({
+            items:5,
+            loop:true,
+            margin:10,
+            nav: true,
+            responsiveClass:true,
+            dots: false,
+            smartSpeed:800,
+            lazyLoad:true,
+            autoplay:false,
+            autoplayTimeout:8000,
+            autoplayHoverPause:true,
+            dotsSpeed:400,
+            navText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+            responsive:{
+                0:{
+                    items:2
+                },            
+                640:{
+                    items:3
+                },
+                1024:{
+                    items:5
+                }
+            }
+        })
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    @apply font-sans bg-gray-700 !important;
+}
+
+ul {
+    @apply pl-0 !important;
+}
+
+.container {
+    @apply max-w-5xl !important;
+}
+
+.left-logo {
+    @apply text-center !important;
+}
+
+#menu-header {
+    @apply transition-all duration-300 ease-in overflow-y-auto !important;
+}
+
+.menu-item {
+    @apply inline-block relative !important;
+}
+
+.menu-item.active a{
+    @apply text-red-200 border-b-3 border-solid	border-gray-200 !important;
+}
+
+.menu-item a {
+    @apply text-center text-white block no-underline font-normal uppercase text-base whitespace-nowrap py-4 px-3 !important;
+}
+
+.menu-item a:hover {
+    @apply text-red-200 !important;
+}
+
+.menu-bar {
+    @apply -left-60 !important;
+}
+
+.menu-bar.open {
+    @apply left-0 !important;
+}
+
+.sub-menu {
+    @apply hidden bg-gray-600 !important;
+}
+
+.sub-menu.open {
+    @apply block !important;
+}
+
+.sub-menu_list {
+    @apply inline-block w-full float-left !important;
+}
+
+.sub-menu_list a {
+    @apply block text-sm font-normal p-3 normal-case !important;
+}
+
+.sub-menu.menu-2 {
+    @apply w-auto !important;
+}
+
+.sub-menu.menu-2 .sub-menu_list {
+    @apply w-full !important;
+}
+
+.owl-carousel img {
+    @apply h-64 !important;
+}
+
+.owl-prev {
+    @apply left-0 !important;
+}
+
+.owl-next {
+    @apply right-0 !important;
+}
+
+.owl-prev, .owl-next {
+    @apply absolute transform bg-gray-500 cursor-pointer w-50 h-16 top-2/4 -translate-y-1/2 text-white opacity-80 !important;
+}
+
+.owl-carousel .item,.item a {
+    @apply overflow-hidden !important;
+}
+
+.owl-carousel .item img,.item img {
+    @apply transition-all duration-300 ease-in-out !important;
+}
+
+.owl-carousel .item:hover img,.item:hover img{
+    @apply transform scale-125 !important;
+}
+
+.owl-next i, .owl-prev i {
+    @apply text-6xl !important;
+}
+
+.title-box a {
+    @apply border-b-3 border-solid font-normal border-gray-600 no-underline inline-block mr-1 text-white pr-1 py-3 !important;
+}
+
+.title-box a:hover {
+    @apply text-red-300 border-red-500 !important;
+}
+
+.title-box a.active {
+    @apply text-red-300 border-red-500 font-light text-2xl uppercase !important;
+}
+
+.item a {
+    @apply inline-block w-full !important;
+}
+
+.item-right {
+    @apply mt-2 !important;
+}
+
+.item-right:hover p.title {
+    @apply text-red-300 !important;
+}
+
+#overlay {
+    @apply hidden !important;
+}
+
+#overlay.open {
+    @apply block !important;
+}
+
+.search-group.open {
+    @apply block !important;
+}
+
+.content-item > * {
+    @apply text-xs text-gray-60 py-1 px-2 font-bold !important;
+}
+
+.content-item .content-chap {
+    @apply bg-gray-40 p-1 text-white !important;
+}
+
+.content-item .content-chap.na {
+    @apply bg-transparent p-0 text-gray-60 font-normal !important;
+}
+
+.content-item .group-content {
+    @apply p-0 !important;
+}
+
+.content-item a {
+    @apply text-white p-0 font-normal hover:text-red-300 !important;
+}
+
+.schedule-movie {
+    @apply w-full mt-2 p-3 border border-solid border-red-700 text-white text-sm !important;
+}
+
+.pagination {
+    @apply block !important;
+}
+
+.pagination a {
+    @apply no-underline text-white border border-solid border-black-10 bg-gray-10 py-1 px-2 !important;
+}
+
+.pagination a.active {
+    @apply text-red-600 border-red-800 !important;
+}
+
+.header-main {
+    @apply w-full border border-solid border-yellow-10 p-1 mb-2 !important;
+}
+
+.chap {
+    @apply inline-block !important;
+}
+
+.chap a {
+    @apply block mx-1 mb-3 p-2 no-underline text-white bg-gray-800 font-bold text-sm rounded transition-all duration-100 ease-linear !important;
+}
+
+.chap a:hover {
+    @apply bg-red-200 !important;
+}
+
+.chap a.active {
+    @apply bg-red-200 !important;
+}
+
+@screen lg {
+    .owl-next, .owl-prev {
+        @apply translate-x-0 !important;
+    }
+}
+
+@screen lg {
+    .left-logo {
+        @apply text-left !important;
+    }
+
+    .menu-item a {
+        @apply text-left !important;
+    }
+
+    .menu-bar {
+        @apply left-auto !important;
+    }
+
+    .sub-menu {
+        @apply absolute left-0 w-800 !important;
+    }
+
+    .sub-menu_list {
+        @apply w-1/5 !important;
+    }
+
+    .menu-item:hover .sub-menu {
+        @apply block !important;
+    }
+
+    #menu-header {
+        @apply overflow-y-visible !important;
+    }
+}
